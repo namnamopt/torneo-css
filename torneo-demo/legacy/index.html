@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas de Entradas - Olimpia vs Cerro</title>
+</head>
+
+<body>
+
+  <header id="inicio">
+    <h1>Olimpia vs Cerro</h1>
+    <h2>Estadio Defensores del Chaco</h2>
+    <p>
+      Sábado 18 de Octubre a las 18:30 hs<br>
+      Correspondiente al Torneo Clausura
+    </p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#seccion1">Sectores del Estadio</a></li>
+      <li><a href="#seccion2">Precios</a></li>
+      <li><a href="#seccion3">Procedimiento para Llegar y Acceder al Estadio</a></li>
+    </ul>
+  </nav>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Sector</th>
+      <th>Descripción</th>
+      <th>Capacidad</th>
+      <th>Precio General</th>
+      <th>Precio Socio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Platea Preferencial</strong></td>
+      <td>Ubicación central con visión panorámica</td>
+      <td>4.200</td>
+      <td>250.000</td>
+      <td>180.000</td>
+    </tr>
+    <tr>
+      <td><strong>Palco</strong></td>
+      <td>Sector VIP con servicios</td>
+      <td>1.500</td>
+      <td>400.000</td>
+      <td>300.000</td>
+    </tr>
+    <tr>
+      <td><strong>Gradería Norte</strong></td>
+      <td>Tribuna popular Norte</td>
+      <td>9.800</td>
+      <td>100.000</td>
+      <td>70.000</td>
+    </tr>
+    <tr>
+      <td><strong>Gradería Sur</strong></td>
+      <td>Tribuna popular Sur</td>
+      <td>9.800</td>
+      <td>100.000</td>
+      <td>70.000</td>
+    </tr>
+    <tr>
+      <td><strong>Sector Visitante</strong></td>
+      <td>Ubicación para la hinchada rival</td>
+      <td>6.000</td>
+      <td>120.000</td>
+      <td>120.000</td>
+    </tr>
+  </tbody>
+</table>
+  <section id="seccion3">
+    <h2>Procedimiento para Llegar y Acceder al Estadio</h2>
+    <ol>
+      <li>Estacionar el vehículo en el predio habilitado o bajarse del transporte público en la parada más cercana.</li>
+      <li>Dirigirse a la entrada que corresponda según el sector indicado en la entrada (Norte, Sur, Preferencial, Visitante).</li>
+      <li>Presentar la entrada impresa o digital en la primera verificación del personal de seguridad.</li>
+      <li>Pasar el control de bolso y mochilas en las requisas.</li>
+      <li>Validar la entrada en los torniquetes electrónicos o lectores de códigos QR.</li>
+      <li>Ingresar en el estadio y seguir las señales hacia la gradería o sector.</li>
+      <li>Ubicar fila y el número de asiento indicado en el ticket.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Plano del Estadio</h2>
+    <figure>
+      <img src="../src/img/defensores.map.jpeg" alt="Plano del Estadio Defensores del Chaco con distribución de sectores">
+      <figcaption>
+        Distribución de sectores: Platea Preferencial al centro, Palcos en laterales VIP,
+        Graderías Norte y Sur populares, y Sector Visitante habilitado para hinchada rival.
+      </figcaption>
+    </figure>
+    <p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Defensores+del+Chaco,Asuncion,Paraguay" target="_blank" rel="noopener noreferrer">
+        Ver ubicación en Google Maps
+      </a>
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Formulario de Reserva</h2>
+    <form action="Reserva" method="POST">
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required><br>
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required><br>
+
+      <label for="cedula">Número de Cédula:</label>
+      <input type="text" id="cedula" name="cedula" required><br>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required><br>
+
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo" required><br>
+
+      <label for="fecha_retiro">Fecha de Retiro:</label>
+      <input type="date" id="fecha_retiro" name="fecha_retiro" required><br>
+
+      <label for="sector">Sector:</label>
+      <select id="sector" name="sector" required>
+        <option value="" disabled selected>Seleccione un sector</option>
+        <option value="palco">Palco</option>
+        <option value="platea">Platea Preferencial</option>
+        <option value="norte">Gradería Norte</option>
+        <option value="sur">Gradería Sur</option>
+        <option value="visitante">Sector Visitante</option>
+      </select><br>
+
+      <label for="cantidad">Cantidad de Entradas:</label>
+      <input type="number" id="cantidad" name="cantidad" min="1" max="10" required><br>
+
+      <label>Condición:</label><br>
+      <label><input type="radio" name="condicion" value="socio" required> Socio</label><br>
+      <label><input type="radio" name="condicion" value="no_socio" required> No socio</label><br>
+
+      <label>Extras:</label><br>
+      <label><input type="checkbox" name="extras" value="estacionamiento"> Estacionamiento</label><br>
+      <label><input type="checkbox" name="extras" value="camiseta"> Camiseta</label><br>
+      <label><input type="checkbox" name="extras" value="programa"> Programa</label><br>
+
+      <label for="comentario">Comentario Libre:</label><br>
+      <textarea id="comentario" name="comentario" rows="4" cols="35" placeholder="Escribe aquí cualquier observación..."></textarea><br><br>
+
+      <button type="submit">Enviar Reserva</button><br>
+      <button type="reset">Limpiar Todo</button>
+
+    </form>
+  </section>
+
+  <hr>
+
+  <footer>
+    <h3>Estadio Defensores del Chaco</h3>
+    <p>
+      <strong>Dirección de Boletería:</strong> Av. General Artigas, Asunción, Paraguay<br>
+      <strong>Horario de Atención:</strong> Lunes a Sábados de 08:00 a 18:00
+    </p>
+    <p>
+      <strong>Contacto:</strong><br>
+      <a href="mailto:boleteria@defensoresdelchaco.com.py">boleteria@defensoresdelchaco.com.py</a><br>
+      <a href="tel:+59521212345">+595 21 212 345</a>
+    </p>
+    <p>
+      <small>&copy; 2026 Estadio Defensores del Chaco. Todos los derechos reservados.</small>
+    </p>
+  </footer>
+
+</body>
+
+</html>
